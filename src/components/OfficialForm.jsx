@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 
 import "./OfficialForm.css"
+import { useNavigate } from "react-router";
 
 const OfficialForm = () => {
+  let navigate=useNavigate()
   const [formData, setFormData] = useState({
     class: "",
     schooling: "",
@@ -56,6 +58,8 @@ const OfficialForm = () => {
     if (validateForm()) {
       alert("Form submitted successfully!");
       console.log(formData);
+
+      navigate("/additional")
     }
   };
 
