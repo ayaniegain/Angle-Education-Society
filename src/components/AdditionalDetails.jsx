@@ -76,10 +76,10 @@ const AdditionalDetails = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-100">
-      <div className="w-full max-w-4xl bg-white shadow-md rounded-lg p-6">
-        {/* Admission Details */}
-        <div className="mb-6">
+    <div className="min-h-screen flex items-center justify-center p-4 official-form-container">
+    <div className="w-full bg-white">
+      {/* Admission Details */}
+        <div className="p-6">
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div>
               <label className="block text-sm font-medium mb-1 text-gray-600 uppercase">
@@ -140,7 +140,7 @@ const AdditionalDetails = () => {
         <hr className="my-4 border-gray-300" />
 
         {/* Student's Details */}
-        <div className="mb-6 grid grid-cols-2/4 gap-4">
+        <div className="p-6 grid grid-cols-2/4 gap-4">
           <div className="w-full">
             <h2 className="text-lg font-semibold mb-4 text-gray-800 uppercase">Student's Details</h2>
             <div className="mb-4">
@@ -358,7 +358,134 @@ const AdditionalDetails = () => {
             </div>
           </div>
           <div className="w-full col-span-2">
-            {/* Empty div to maintain the grid layout */}
+           
+        {/* Previous Academic Information */}
+        <div className="p-4">
+          <h2 className="text-lg font-semibold mb-4 text-gray-800 uppercase">Previous Academic Information</h2>
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <div>
+              <label className="block text-sm font-medium mb-1 text-gray-600">Last School affiliated to:</label>
+              <div className="flex gap-4 flex-wrap">
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="lastSchoolAffiliated"
+                    value="cbse"
+                    checked={formData.lastSchoolAffiliated === "cbse"}
+                    onChange={handleChange}
+                    className="mr-2 accent-[#789336]"
+                  />
+                  CBSE
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="lastSchoolAffiliated"
+                    value="icse"
+                    checked={formData.lastSchoolAffiliated === "icse"}
+                    onChange={handleChange}
+                    className="mr-2 accent-[#789336]"
+                  />
+                  ICSE
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="lastSchoolAffiliated"
+                    value="ib"
+                    checked={formData.lastSchoolAffiliated === "ib"}
+                    onChange={handleChange}
+                    className="mr-2 accent-[#789336]"
+                  />
+                  IB
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="lastSchoolAffiliated"
+                    value="stateBoard"
+                    checked={formData.lastSchoolAffiliated === "stateBoard"}
+                    onChange={handleChange}
+                    className="mr-2 accent-[#789336]"
+                  />
+                  State Board
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="lastSchoolAffiliated"
+                    value="other"
+                    checked={formData.lastSchoolAffiliated === "other"}
+                    onChange={handleChange}
+                    className="mr-2 accent-[#789336]"
+                  />
+                  Other (please specify)
+                </label>
+              </div>
+            </div>
+            <div className="flex items-end">
+              <div className="w-1/2">
+                <label className="block text-sm font-medium mb-1 text-gray-600">Second Language Preference:</label>
+                <div className="flex gap-4">
+                  <label className="flex items-center">
+                    <input
+                      type="radio"
+                      name="secondLanguage"
+                      value="hindi"
+                      checked={formData.secondLanguage === "hindi"}
+                      onChange={handleChange}
+                      className="mr-2 accent-[#789336]"
+                    />
+                    Hindi
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      type="radio"
+                      name="secondLanguage"
+                      value="bengali"
+                      checked={formData.secondLanguage === "bengali"}
+                      onChange={handleChange}
+                      className="mr-2 accent-[#789336]"
+                    />
+                    Bengali
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-4 mb-4">
+            <div>
+              <label className="block text-sm font-medium mb-1 text-gray-600">Last Class Attended:</label>
+              <select
+                name="lastClassAttended"
+                value={formData.lastClassAttended}
+                onChange={handleChange}
+                className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#789336]"
+              >
+                <option value="">Select Last Class Attended</option>
+                <option value="kindergarten">Kindergarten</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+              </select>
+              {errors.lastClassAttended && <p className="text-red-500 text-sm mt-1">{errors.lastClassAttended}</p>}
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1 text-gray-600">Last School Attended:</label>
+              <input
+                type="text"
+                name="lastSchoolName"
+                value={formData.lastSchoolName}
+                onChange={handleChange}
+                placeholder="Enter School's Name"
+                className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#789336]"
+              />
+              {errors.lastSchoolName && <p className="text-red-500 text-sm mt-1">{errors.lastSchoolName}</p>}
+            </div>
+          </div>
+        </div>
+        <hr className="my-4 border-gray-300" />
+
+     
           </div>
         </div>
 
