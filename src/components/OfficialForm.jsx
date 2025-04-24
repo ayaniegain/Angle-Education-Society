@@ -86,7 +86,7 @@ const OfficialForm = () => {
           }
         `}
       </style>
-      <div className="min-h-screen flex items-center justify-center p-4 official-form-container">
+      <div className=" flex items-center justify-center p-4 official-form-container">
         <div className="w-full bg-white">
           {/* Form */}
           <div className="p-6">
