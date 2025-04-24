@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path={"/"} element={<OfficialForm />} />
-        <Route path={"/payment"} element={<PaymentForm />} />
+        <Route path={"/payment"} element={<AdditionalDetails />} />
         <Route path={"/additional"} element={<AdditionalDetails />} />
       </Routes>
     </>
